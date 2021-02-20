@@ -13,14 +13,21 @@ java.sourceCompatibility = JavaVersion.VERSION_11
 
 repositories {
 	mavenCentral()
+	jcenter()
 }
 
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+	implementation ("org.springframework.boot:spring-boot-starter-data-jpa")
+	implementation ("javax.inject:javax.inject:1")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+
+	testImplementation("com.github.javafaker:javafaker:0.15")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	testImplementation("io.mockk:mockk:1.9.3")
+	testImplementation("org.amshove.kluent:kluent:1.60")
 }
 
 tasks.withType<KotlinCompile> {
