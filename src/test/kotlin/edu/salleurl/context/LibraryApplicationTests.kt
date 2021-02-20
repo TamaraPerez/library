@@ -1,4 +1,4 @@
-package edu.salleurl.library
+package edu.salleurl.context
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
