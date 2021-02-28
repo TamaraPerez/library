@@ -2,8 +2,8 @@ package edu.salleurl.context.catalog.books.domain
 
 import com.github.javafaker.Faker
 
-class BookNameMother {
+class AuthorMother {
     companion object {
-        fun random() = Name(Faker().book().title())
+        fun random() = Author(Faker().book().author())
     }
 }

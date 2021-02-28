@@ -10,6 +10,6 @@ class BookPostController(val creator: BookCreatorUseCase) {
     @PostMapping("/api/books")
     @ResponseStatus(HttpStatus.CREATED)
     fun post(@RequestBody body: CreateBookRequestBody) {
-        creator.execute(id = body.id, name = body.name)
+        creator.execute(id = body.id, name = body.name, author = body.author)
     }
 }

@@ -1,7 +1,8 @@
 package edu.salleurl.context.catalog.books.application
 
+import edu.salleurl.context.catalog.books.domain.AuthorMother
 import edu.salleurl.context.catalog.books.domain.BookIdMother
-import edu.salleurl.context.catalog.books.domain.BookNameMother
+import edu.salleurl.context.catalog.books.domain.NameMother
 import edu.salleurl.context.catalog.books.domain.create.BookCreator
 import io.mockk.mockk
 import io.mockk.verify
@@ -17,12 +18,13 @@ class BookCreatorUseCaseTest {
     fun `should create a book`() {
         // Given
         val id = BookIdMother.random()
-        val name = BookNameMother.random()
+        val name = NameMother.random()
+        val author = AuthorMother.random()
 
         // When
-        bookCreatorUseCase.execute(id.value, name.value)
+        bookCreatorUseCase.execute(id.value, name.value, author.value)
 
         // Then
-        verify { creator.execute(id, name) }
+        verify { creator.execute(id, name, author) }
     }
 }

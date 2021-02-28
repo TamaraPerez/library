@@ -17,14 +17,15 @@ class BookCreatorTest {
     fun `should create a book`() {
         //Given
         val id = BookIdMother.random()
-        val name = BookNameMother.random()
+        val name = NameMother.random()
+        val author = AuthorMother.random()
         every { repository.existsByName(name) } returns false
 
         //When
-        creator.execute(id, name)
+        creator.execute(id, name, author)
 
         //Then
-        val book = BookMother.random(id, name)
+        val book = BookMother.random(id, name, author)
         verify { repository.save(book) }
     }
 
@@ -32,11 +33,12 @@ class BookCreatorTest {
     fun `should throw an exception when the book name already exists`() {
         //Given
         val id = BookIdMother.random()
-        val name = BookNameMother.random()
+        val name = NameMother.random()
+        val author = AuthorMother.random()
         every { repository.existsByName(name) } returns true
 
         //When
-        invoking { creator.execute(id, name) } `should throw` BookAlreadyExistsException::class
+        invoking { creator.execute(id, name, author) } `should throw` BookAlreadyExistsException::class
 
         //Then
         val book = BookMother.random(id, name)
