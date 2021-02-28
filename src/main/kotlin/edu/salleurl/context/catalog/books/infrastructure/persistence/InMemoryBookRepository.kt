@@ -13,10 +13,10 @@ class InMemoryBookRepository : BookRepository {
     }
 
     override fun existsByName(name: Name): Boolean = books.any { it.name == name }
+    override fun exists(id: BookId): Boolean = books.any { it.id == id }
 
     override fun all(): Books = Books(books)
-
-    override fun find(id: BookId): Book? = books.find { it.id == id }
+    override fun find(id: BookId): Book = books.find { it.id == id }!!
 
     override fun search(author: Author): Books {
         val booksWithTheSameAuthor = books.filter { it.author == author }
