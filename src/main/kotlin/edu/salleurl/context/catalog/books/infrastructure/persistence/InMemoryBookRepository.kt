@@ -1,8 +1,6 @@
 package edu.salleurl.context.catalog.books.infrastructure.persistence
 
-import edu.salleurl.context.catalog.books.domain.Book
-import edu.salleurl.context.catalog.books.domain.Name
-import edu.salleurl.context.catalog.books.domain.BookRepository
+import edu.salleurl.context.catalog.books.domain.*
 import javax.inject.Named
 
 @Named
@@ -15,4 +13,14 @@ class InMemoryBookRepository : BookRepository {
     }
 
     override fun existsByName(name: Name): Boolean = books.any { it.name == name }
+
+    override fun all(): Books = Books(books)
+
+    override fun find(id: BookId): Book? = books.find { it.id == id }
+
+    override fun search(author: Author): Books {
+        val booksWithTheSameAuthor = books.filter { it.author == author }
+
+        return Books(booksWithTheSameAuthor)
+    }
 }
