@@ -8,5 +8,5 @@ import javax.inject.Named
 @Named
 class BooksByAuthorSearcher(private val repository: BookRepository) {
 
-    fun execute(author: Author): Books? = repository.search(author)
+    fun invoke(author: Author): Books? = repository.search(author)
 }

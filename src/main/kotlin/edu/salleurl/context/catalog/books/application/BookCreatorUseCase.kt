@@ -10,6 +10,6 @@ import javax.inject.Named
 class BookCreatorUseCase(private val creator: BookCreator) {
 
     fun execute(id: String, name: String, author: String) {
-        creator.execute(BookId(id), Name(name), Author(author))
+        creator.invoke(BookId(id), Name(name), Author(author))
     }
 }

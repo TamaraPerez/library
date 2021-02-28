@@ -25,6 +25,6 @@ class BookCreatorUseCaseTest {
         bookCreatorUseCase.execute(id.value, name.value, author.value)
 
         // Then
-        verify { creator.execute(id, name, author) }
+        verify { creator.invoke(id, name, author) }
     }
 }

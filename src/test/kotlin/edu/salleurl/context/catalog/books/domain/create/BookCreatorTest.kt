@@ -22,7 +22,7 @@ class BookCreatorTest {
         every { repository.existsByName(name) } returns false
 
         //When
-        creator.execute(id, name, author)
+        creator.invoke(id, name, author)
 
         //Then
         val book = BookMother.random(id, name, author)
@@ -38,7 +38,7 @@ class BookCreatorTest {
         every { repository.existsByName(name) } returns true
 
         //When
-        invoking { creator.execute(id, name, author) } `should throw` BookAlreadyExistsException::class
+        invoking { creator.invoke(id, name, author) } `should throw` BookAlreadyExistsException::class
 
         //Then
         val book = BookMother.random(id, name)
