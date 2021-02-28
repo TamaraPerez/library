@@ -18,8 +18,10 @@ class InMemoryBookRepository : BookRepository {
     override fun all(): Books = Books(books)
     override fun find(id: BookId): Book = books.find { it.id == id }!!
 
-    override fun search(author: Author): Books {
+    override fun search(author: Author): Books? {
         val booksWithTheSameAuthor = books.filter { it.author == author }
+
+        if (booksWithTheSameAuthor.isEmpty()) return null
 
         return Books(booksWithTheSameAuthor)
     }

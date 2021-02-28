@@ -6,5 +6,5 @@ interface BookRepository {
     fun exists(id: BookId): Boolean
     fun all(): Books
     fun find(id: BookId): Book
-    fun search(author: Author): Books
+    fun search(author: Author): Books?
 }
