@@ -4,6 +4,6 @@ import com.github.javafaker.Faker
 
 class BookNameMother {
     companion object {
-        fun random() = BookName(Faker().book().title())
+        fun random() = Name(Faker().book().title())
     }
 }
