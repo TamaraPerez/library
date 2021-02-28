@@ -1,7 +1,6 @@
 package edu.salleurl.context.catalog.books.domain.find
 
 import edu.salleurl.context.catalog.books.domain.*
-import edu.salleurl.context.catalog.books.domain.search.BooksByAuthorSearcher
 import javax.inject.Named
 
 @Named
