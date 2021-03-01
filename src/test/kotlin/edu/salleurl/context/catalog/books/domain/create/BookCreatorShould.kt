@@ -8,7 +8,7 @@ import org.amshove.kluent.`should throw`
 import org.amshove.kluent.invoking
 import org.junit.jupiter.api.Test
 
-class BookCreatorTest {
+class BookCreatorShould {
 
     private val repository: BookRepository = mockk(relaxed = true)
     private val creator = BookCreator(repository)
