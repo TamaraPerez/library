@@ -88,6 +88,5 @@ class InMemoryBookRepositoryShould {
 
         //Then
         assertThat(repository.search(author)).isEqualTo(books)
-
     }
 }
