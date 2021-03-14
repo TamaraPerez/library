@@ -13,11 +13,11 @@ class BookPostController(val creator: BookCreatorUseCase) {
     fun post(@RequestBody body: CreateBookRequestBody) {
         creator.execute(id = body.id, name = body.name, author = body.author)
     }
-}
 
-@RestControllerAdvice(assignableTypes = [BookPostController::class])
-class BookPostControllerExceptionHandler {
-    @ExceptionHandler(BookAlreadyExistsException::class)
-    @ResponseStatus(HttpStatus.CONFLICT)
-    fun handle(e: BookAlreadyExistsException) = e
+    @RestControllerAdvice(assignableTypes = [BookPostController::class])
+    class BookPostControllerExceptionHandler {
+        @ExceptionHandler(BookAlreadyExistsException::class)
+        @ResponseStatus(HttpStatus.CONFLICT)
+        fun handle(e: BookAlreadyExistsException) = e
+    }
 }
