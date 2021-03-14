@@ -14,7 +14,7 @@ import org.springframework.http.HttpStatus
     webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT,
     classes = [LibraryApplication::class]
 )
-class ApiShould {
+class BookPostAcceptance {
 
     private val bookId = BookIdMother.random()
     private val bookName = NameMother.random()
