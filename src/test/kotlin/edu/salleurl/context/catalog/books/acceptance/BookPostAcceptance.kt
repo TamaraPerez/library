@@ -4,7 +4,7 @@ import edu.salleurl.context.LibraryApplication
 import edu.salleurl.context.catalog.books.domain.AuthorMother
 import edu.salleurl.context.catalog.books.domain.BookIdMother
 import edu.salleurl.context.catalog.books.domain.NameMother
-import io.restassured.RestAssured.*
+import io.restassured.RestAssured.given
 import io.restassured.http.ContentType
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
