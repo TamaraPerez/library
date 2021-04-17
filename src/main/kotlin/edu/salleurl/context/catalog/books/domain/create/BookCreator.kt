@@ -6,10 +6,10 @@ import javax.inject.Named
 @Named
 class BookCreator(private val repository: BookRepository) {
 
-    fun invoke(id: BookId, name: Name, author: Author) {
+    fun invoke(id: BookId, name: Name, author: Author): Book {
         guardBookDoesNotExist(name)
 
-        Book.create(id, name, author).let { repository.save(it) }
+        return Book.create(id, name, author).also { repository.save(it) }
     }
 
     private fun guardBookDoesNotExist(name: Name) {

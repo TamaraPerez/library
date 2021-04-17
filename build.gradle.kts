@@ -22,6 +22,7 @@ dependencies {
 	implementation ("javax.inject:javax.inject:1")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+	implementation("org.springframework.boot:spring-boot-starter-amqp")
 
 	testImplementation("com.github.javafaker:javafaker:0.15")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
