@@ -1,4 +1,4 @@
-package edu.salleurl.context.shared.domain.infrastructure.publisher
+package edu.salleurl.context.shared.infrastructure.publisher
 
 import edu.salleurl.context.shared.domain.bus.event.DomainEvent
 import edu.salleurl.context.shared.domain.bus.publisher.EventPublisher

@@ -1,4 +1,4 @@
-package edu.salleurl.context.shared.domain.infrastructure.event
+package edu.salleurl.context.shared.infrastructure.event
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter
